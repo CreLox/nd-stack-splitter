@@ -18,7 +18,7 @@ fi
 # Acquire "NStagePositions"
 NSTAGEPOSITIONS=`awk '/"NStagePositions", / {print $2}' ${NDFILENAME} | tr -d '\r'`
 
-# Remove thumbnail images and create subfolders with related images
+# Remove thumbnail caches and create subfolders with related images
 rm -rf *_thumb_*
 SUBGROUPNUMBER=`echo "scale = 2; ${NSTAGEPOSITIONS} / ${SUBGROUPSIZE}" | bc | awk '{print ($0-int($0)>0)?int($0)+1:int($0)}'`
 for (( i=1 ; i<=$((${SUBGROUPNUMBER})) ; i++ ))
