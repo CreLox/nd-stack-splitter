@@ -45,8 +45,8 @@ do
 	# Create .nd file for each subgroup
 	SUBNDFILEPATH="./${SUBFOLDERNAME}/${NDFILENAME}"
 	grep -B 20 '"DoStage", ' ${NDFILENAME} >${SUBNDFILEPATH}
-	echo "\"NStagePositions\", ${THISSUBGROUPSIZE}" >>${SUBNDFILEPATH}
-	for (( j=$((${SUBGROUPSTART})) ; j<=$((${SUBGROUPEND})) ; j++ ))
+	echo "\"NStagePositions\", ${SUBGROUPEND}" >>${SUBNDFILEPATH}
+	for (( j=1 ; j<=$((${SUBGROUPEND})) ; j++ ))
         do
 		echo "\"Stage${j}\", \"Position${j}\"" >>${SUBNDFILEPATH}
         done
