@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for ALLFILESINPWD in *
+do
+	mv ${ALLFILESINPWD} ${1}${ALLFILESINPWD} 
+done
+
