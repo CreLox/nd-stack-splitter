@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for FILEINPWDTOBERENAMED in ${1}*
+do
+	mv ${FILEINPWDTOBERENAMED} ${FILEINPWDTOBERENAMED/#${1}/${2}}
+	# https://stackoverflow.com/questions/13215666/script-for-changing-prefix-of-filename-in-bash
+done
+
